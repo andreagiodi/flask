@@ -37,7 +37,7 @@ def frasi():
 def quantomanca():
   oggi = datetime.now()
   fine = datetime(day=8, month=6, year=2022)
-  differenza= fine - oggi
+  differenza = fine - oggi
   return render_template('indexmanca.html', fine=differenza.days)
 
 
