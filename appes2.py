@@ -19,12 +19,18 @@ def welcome():
     for user in utenti:
         sex = user['sex']
         name = user['name']
+        if user['sex'] == 'M':
+            sex1 = 'o'
+        if user['sex'] == 'F':
+            sex1 = 'a'
+        if user['sex'] == 'A':
+            sex1 = '*'
         if user["username"] == request.args["username"]:
             if user["password"] == request.args['password']:
-
-                return render_template('welcome2.html', sex=sex, name=name, username=username,password=password)
-        return render_template('error.html')
-    return render_template('welcome2.html')
+                
+                return render_template('welcome2.html', letter=sex1 ,sex=sex, name=name, username=username,password=password)
+        #return render_template('error.html')
+    return render_template('error.html')
 
 @app.route('/login', methods=['GET'])
 def login():
