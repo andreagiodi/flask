@@ -9,6 +9,7 @@ from datetime import datetime
 def index():
     return render_template('indexes.html')
 
+
 @app.route('/meteo', methods=['GET'])
 def meteo():
     n = rd.randint(0, 8)
