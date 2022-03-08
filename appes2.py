@@ -11,14 +11,24 @@ def index():
 def register():
     return render_template('register.html')
 
-@app.route('/login', methods=['GET'])
-def login():
+
+@app.route('/welcome', methods=['GET'])
+def welcome():
+    username = request.args['username']
+    password = request.args['password']
     for user in utenti:
+        sex = user['sex']
+        name = user['name']
         if user["username"] == request.args["username"]:
             if user["password"] == request.args['password']:
-                return render_template('#pagina benvenuto.html')
-            #modificare pagina benvenuto/a
-    return render_template('login.html')
+
+                return render_template('welcome2.html', sex=sex, name=name, username=username,password=password)
+        return render_template('error.html')
+    return render_template('welcome2.html')
+
+@app.route('/login', methods=['GET'])
+def login():
+    return render_template('login.html', utenti = utenti)
 
 @app.route('/data1', methods=['GET'])
 def data():
@@ -34,7 +44,8 @@ def data():
                     if confirm:
                         if name:
                             utenti.append({"name": name, "username": username, "password": password, "confirm": confirm, "sex": sex})
-                            return redirect(url_for("/login"))
+                            #return redirect(url_for("/login"))
+                            return render_template('login.html', utenti=utenti)
     
 
     return render_template('error.html', nome = username)
@@ -45,4 +56,4 @@ def data():
 
     
 if __name__ == '__main__':
-  app.run(host='0.0.0.0', port=3245, debug=True)
+  app.run(host='0.0.0.0', port=3246, debug=True)
