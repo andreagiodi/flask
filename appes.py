@@ -7,7 +7,7 @@ from datetime import datetime
 
 @app.route('/', methods=['GET'])
 def index():
-    return render_template('indexes.html')
+    return render_template('indexes.html', )
 
 
 @app.route('/meteo', methods=['GET'])

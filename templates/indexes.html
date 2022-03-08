@@ -1,13 +1,19 @@
 <html>
-    <head>
-        <h1>Welcome</h1>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    </head>
-    <body>
+    <header style="background-color: gray;">
+        <head>
+            <font color="white">
+            <img src="static/images/Logo.png" alt="logo" style="float:left;margin: 0px" width="100" height="100"> 
+            <h1 style="font-size: 10vh;"> Benvenuto</h1> 
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        </head>
+    </header>  
+    <body style="background-color: #292929;">
+        
         <p>{{testo}}</p>
-        <a href='/meteo' ><img src="static/Benvenuto.png" alt="imgmeteo" ></a> <a href='/frasicelebri' ><img src="static/Benvenuto.png" alt="img benvenuto1"></a> <a href='/quantomanca' ><img src="static/Benvenuto.png" alt="img benvenuto2"></a>
+        <a href='/meteo' ><img src="static/images/benvmeteo.png" alt="imgmeteo" width="104" height="104"></a> <a href='/frasicelebri' ><img src="static/images/benvfrasi.png" alt="img benvenuto1" width="111" height="111"></a> <a href='/quantomanca' ><img src="static/images/benvcalendar.png" alt="img benvenuto2" width="111" height="111"></a>
         
     </body>
+    </font>
 
 
 
