@@ -3,6 +3,8 @@ app = Flask(__name__)
 
 utenti = []
 
+
+
 @app.route('/', methods=['GET'])
 def index():
     return render_template('home.html')
