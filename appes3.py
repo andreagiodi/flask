@@ -9,7 +9,6 @@ capoluoghiRegione = {'Abruzzo': 'Aquila', 'Basilicata': 'Potenza', 'Calabria': '
 
 @app.route('/', methods=['GET'])
 def index():
-    
     return render_template('indexcapo.html')
 
 
@@ -30,11 +29,5 @@ def risp():
         return render_template('error.html')
     return render_template('error.html')
 
-    
-    
-    
-    
-
-    
 if __name__ == '__main__':
   app.run(host='0.0.0.0', port=3246, debug=True)
